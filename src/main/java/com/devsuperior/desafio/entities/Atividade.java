@@ -13,6 +13,10 @@ public class Atividade {
     private String descricao;
     private Double price;
 
+    @ManyToOne
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
+
     public Atividade() {}
 
     public Atividade(Integer id, String descricao, Double price) {
