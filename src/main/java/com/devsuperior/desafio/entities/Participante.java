@@ -2,6 +2,9 @@ package com.devsuperior.desafio.entities;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "tb_participante")
 public class Participante {
@@ -12,6 +15,12 @@ public class Participante {
     private String nome;
     @Column(unique = true)
     private String email;
+
+    @ManyToMany
+    @JoinTable(name = "tb_participantes_atividade",
+            joinColumns = @JoinColumn(name = "participantes_id"),
+            inverseJoinColumns = @JoinColumn(name = "atividade_id"))
+    private Set<Atividade> atividades = new HashSet<>();
 
     public Participante(){}
 
