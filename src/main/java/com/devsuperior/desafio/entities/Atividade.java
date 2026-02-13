@@ -13,7 +13,7 @@ public class Atividade {
     private Integer id;
     @Column(columnDefinition = "TEXT")
     private String descricao;
-    private Double price;
+    private Double preco;
 
     @ManyToOne
     @JoinColumn(name = "categoria_id")
@@ -27,10 +27,10 @@ public class Atividade {
 
     public Atividade() {}
 
-    public Atividade(Integer id, String descricao, Double price) {
+    public Atividade(Integer id, String descricao, Double preco) {
         this.id = id;
         this.descricao = descricao;
-        this.price = price;
+        this.preco = preco;
     }
 
     public Integer getId() {
@@ -49,12 +49,12 @@ public class Atividade {
         this.descricao = descricao;
     }
 
-    public Double getPrice() {
-        return price;
+    public Double getPreco() {
+        return preco;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setPreco(Double preco) {
+        this.preco = preco;
     }
 
     public Categoria getCategoria() {
